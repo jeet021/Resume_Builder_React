@@ -1,0 +1,65 @@
+/* Contact Us Form CSS */
+
+.contact-us-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.contact-us-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-us-container p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  display: grid;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
