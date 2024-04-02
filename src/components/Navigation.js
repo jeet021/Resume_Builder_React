@@ -4,8 +4,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 
-
-
 function Navigation() {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
@@ -21,8 +19,10 @@ function Navigation() {
 
   const handleLogout = () => {
     localStorage.removeItem("userLoggedIn");
+    localStorage.removeItem("userName");
     alert("Successfully logged out!");
     setUserLoggedIn(false);
+    window.location.href = "/login";
   };
 
   return (
@@ -33,29 +33,31 @@ function Navigation() {
             Resume Builder
           </NavLink>
         </Navbar.Brand>
-        <Nav className="me-auto">
-          <NavLink to="/home" className="mx-2 text-decoration-none text-black">
-            Home
-          </NavLink>
-          <NavLink
-            to="/aboutus"
-            className="mx-2 text-decoration-none text-black"
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/contactus"
-            className="mx-2 text-decoration-none text-black"
-          >
-            ContactUs
-          </NavLink>
-          <NavLink
-            to="/feedback"
-            className="mx-2 text-decoration-none text-black"
-          >
-            Feedback
-          </NavLink>
-        </Nav>
+        {userLoggedIn && (
+          <Nav className="me-auto">
+            <NavLink to="/home" className="mx-2 text-decoration-none text-black">
+              Home
+            </NavLink>
+            <NavLink
+              to="/aboutus"
+              className="mx-2 text-decoration-none text-black"
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contactus"
+              className="mx-2 text-decoration-none text-black"
+            >
+              ContactUs
+            </NavLink>
+            <NavLink
+              to="/feedback"
+              className="mx-2 text-decoration-none text-black"
+            >
+              Feedback
+            </NavLink>
+          </Nav>
+        )}
         {userLoggedIn && (
           <Nav>
             <Nav.Link
