@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import * as React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,9 +21,8 @@ function Login() {
         if (response.data === "Success") {
           alert("Successfully logged in!");
           localStorage.setItem("userLoggedIn", true);
-          // localStorage.setItem("userName", response.data.user.name);
           // Navigating to the dashboard page after successful login
-          navigate("/home");
+          window.location.href = "/home";
         } else {
           alert("Invalid Email or Password!");
         }
@@ -31,12 +31,6 @@ function Login() {
         console.error(error);
       });
   };
-
-  // const handleLogout = () => {
-  //   localStorage.removeItem("userLoggedIn");
-  //   // Redirecting to the login page after logout
-  //   navigate("/login");
-  // };
 
   return (
     <div className="container mt-5">
